@@ -15,7 +15,6 @@ namespace Senai.InLock.WebApi.Models {
         [StringLength(maximumLength: 200, MinimumLength = 8, ErrorMessage = "Senhas invalida")]
         public string Senha;
 
-        [Required(ErrorMessage = "Insira um Tipo de usuario")]
-        public string TipoUsuario;
+        public string TipoUsuario = "Cliente";
     }
 }

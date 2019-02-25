@@ -8,10 +8,10 @@ Select * From Estudios;
 Select * From Jogos;
 
 -- Lista Todos os jogos e seus Estudios
-Select J.* , E.NomeEstudio From Jogos as J Left Join Estudios as E on E.EstudioId = J.EstudioId;
+SELECT Jogos.* , Estudios.* FROM Jogos LEFT JOIN Estudios ON Estudios.EstudioId = Jogos.EstudioId;
 
 -- Lista todos os estudios e seus respectivos jogos
-Select E.NomeEstudio ,J.NomeJogo , J.Descricao , J.DataLancamento From Jogos as J Right Join Estudios as E on E.EstudioId = J.EstudioId;
+Select Estudios.* ,Jogos.* From Jogos Right Join Estudios on Estudios.EstudioId = Jogos.EstudioId;
 
 -- Lista um usuario por email e senha 
 Select * From Usuarios Where Email = 'admin@admin.com' And Senha = 'admin';
