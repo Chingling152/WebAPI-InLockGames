@@ -4,11 +4,11 @@ using System.ComponentModel.DataAnnotations;
 namespace Senai.InLock.WebApi.Models {
     public class JogoModel {
         
-        public int ID;
+        public int JogoId;
 
         [Required(ErrorMessage = "O jogo precisa ter um nome")]
         [StringLength(maximumLength: 200,MinimumLength = 0, ErrorMessage = "O nome inserido excede a quantidade de caracteres aceitas")]
-        public string Nome;
+        public string NomeJogo;
 
         [Required(ErrorMessage = "O jogo precisa ter uma descrição")]
         public string Descricao;
@@ -20,7 +20,7 @@ namespace Senai.InLock.WebApi.Models {
         [Required(ErrorMessage = "Insira um valor para o jogo")]
         public double Valor;
 
-        public int IDEstudio;
+        public int EstudioId;
 
         public EstudioModel Estudio;
     }
