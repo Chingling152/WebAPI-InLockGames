@@ -11,10 +11,10 @@ namespace Web.Api.InLockGames.Controllers
     [ApiController]
     public class EstudiosController : ControllerBase
     {
-        private readonly IJogosRepository repositorio;
+        private readonly IEstudiosRepository repositorio;
 
         public EstudiosController() {
-            repositorio = new JogosRepository();
+            repositorio = new EstudiosRepository();
         }
 
         [HttpGet("Listar")]
@@ -29,16 +29,16 @@ namespace Web.Api.InLockGames.Controllers
         [HttpGet("ListarComEstudios")]
         public IActionResult ListarEstudios() {
             try {
-                return Ok(repositorio.ListarComEstudio());
+                return Ok(repositorio.ListarComJogos());
             } catch (Exception exc) {
                 return BadRequest(exc.Message);
             }
         }
 
         [HttpPost("Cadastrar")]
-        public IActionResult Cadastrar(Jogos jogo) {
+        public IActionResult Cadastrar(Estudios estudio) {
             try {
-                repositorio.Cadastrar(jogo);
+                repositorio.Cadastrar(estudio);
                 return Ok(repositorio.Listar());
             } catch (Exception exc) {
                 return BadRequest(exc.Message);
@@ -46,19 +46,9 @@ namespace Web.Api.InLockGames.Controllers
         }
 
         [HttpPut]
-        public IActionResult Alterar(Jogos jogo) {
+        public IActionResult Alterar(Estudios estudio) {
             try {
-                repositorio.Alterar(jogo);
-                return Ok(repositorio.Listar());
-            } catch (Exception exc) {
-                return BadRequest(exc.Message);
-            }
-        }
-
-        [HttpPut]
-        public IActionResult Remover(Jogos jogo) {
-            try {
-                repositorio.Remover(jogo);
+                repositorio.Alterar(estudio);
                 return Ok(repositorio.Listar());
             } catch (Exception exc) {
                 return BadRequest(exc.Message);

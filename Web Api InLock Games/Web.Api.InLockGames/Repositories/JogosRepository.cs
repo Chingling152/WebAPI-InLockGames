@@ -6,6 +6,9 @@ using Web.Api.InLockGames.Domains;
 using Web.Api.InLockGames.Interfaces;
 
 namespace Web.Api.InLockGames.Repositories {
+    /// <summary>
+    /// Classe que lida com dados relativos a Jogos
+    /// </summary>
     public class JogosRepository : IJogosRepository {
 
         public void Alterar(Jogos jogo) {
@@ -23,8 +26,6 @@ namespace Web.Api.InLockGames.Repositories {
         }
 
         public List<Jogos> Listar() => new InLockContext().Jogos.ToList();
-
-        public List<Jogos> ListarComEstudio() => new InLockContext().Jogos.Include("Estudios").ToList();
 
         public void Remover(Jogos jogo) {
             using (InLockContext ctx = new InLockContext()) {
