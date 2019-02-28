@@ -11,7 +11,6 @@ namespace Web.Api.InLockGames.Controllers
     [ApiController]
     public class JogosController : ControllerBase
     {
-
         private readonly IJogosRepository repositorio;
 
         public JogosController() {

@@ -17,7 +17,7 @@ namespace Web.Api.InLockGames.Controllers
             repositorio = new EstudiosRepository();
         }
 
-        [HttpGet("Listar")]
+        [HttpGet]
         public IActionResult Listar() {
             try {
                 return Ok(repositorio.Listar());
@@ -26,10 +26,19 @@ namespace Web.Api.InLockGames.Controllers
             }
         }
 
-        [HttpGet("ListarComEstudios")]
-        public IActionResult ListarEstudios() {
+        [HttpGet("Jogos")]
+        public IActionResult ListarJogos() {
             try {
                 return Ok(repositorio.ListarJogos());
+            } catch (Exception exc) {
+                return BadRequest(exc.Message);
+            }
+        }
+
+        [HttpGet("{ID}")]
+        public IActionResult ListarJogos(int ID) {
+            try {
+                return Ok(repositorio.ListarJogos(ID));
             } catch (Exception exc) {
                 return BadRequest(exc.Message);
             }
@@ -45,7 +54,7 @@ namespace Web.Api.InLockGames.Controllers
             }
         }
 
-        [HttpPut]
+        [HttpPut("Alterar")]
         public IActionResult Alterar(Estudios estudio) {
             try {
                 repositorio.Alterar(estudio);
