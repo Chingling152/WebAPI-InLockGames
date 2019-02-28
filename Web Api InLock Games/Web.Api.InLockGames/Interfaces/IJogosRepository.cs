@@ -22,8 +22,8 @@ namespace Web.Api.InLockGames.Interfaces {
         /// <summary>
         /// Remove permanentemente um jogo do banco de dados
         /// </summary>
-        /// <param name="jogo">Jogo que será removido</param>
-        void Remover(Jogos jogo);
+        /// <param name="ID">ID do jogo que será removido</param>
+        void Remover(int ID);
 
         /// <summary>
         /// Altera os valores de um jogo no banco de dados

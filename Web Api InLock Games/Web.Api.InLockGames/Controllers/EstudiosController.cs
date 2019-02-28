@@ -29,7 +29,7 @@ namespace Web.Api.InLockGames.Controllers
         [HttpGet("ListarComEstudios")]
         public IActionResult ListarEstudios() {
             try {
-                return Ok(repositorio.ListarComJogos());
+                return Ok(repositorio.ListarJogos());
             } catch (Exception exc) {
                 return BadRequest(exc.Message);
             }

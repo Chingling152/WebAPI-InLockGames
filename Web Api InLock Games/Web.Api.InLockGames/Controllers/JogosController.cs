@@ -6,7 +6,7 @@ using Web.Api.InLockGames.Repositories;
 
 namespace Web.Api.InLockGames.Controllers
 {
-    [Produces("aplication")]
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
     public class JogosController : ControllerBase
@@ -47,14 +47,15 @@ namespace Web.Api.InLockGames.Controllers
             }
         }
 
-        [HttpDelete]
-        public IActionResult Remover(Jogos jogo) {
+        [HttpDelete("{ID}")]
+        public IActionResult Remover(int ID) {
             try {
-                repositorio.Remover(jogo);
+                repositorio.Remover(ID);
                 return Ok(repositorio.Listar());
             } catch (Exception exc) {
                 return BadRequest(exc.Message);
             }
         }
+
     }
 }

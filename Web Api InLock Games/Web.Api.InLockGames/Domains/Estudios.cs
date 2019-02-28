@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Web.Api.InLockGames.Domains
-{
+namespace Web.Api.InLockGames.Domains {
     public partial class Estudios
     {
         public Estudios()
