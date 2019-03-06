@@ -23,5 +23,5 @@ CREATE TABLE Usuarios(
 	UsuarioId int Identity Primary Key,
 	Email VarChar(200) Unique Not Null,
 	Senha VarChar(200) Not Null,
-	TipoUsuario VarChar(200) Not Null
+	TipoUsuario SMALLINT Not Null
 );

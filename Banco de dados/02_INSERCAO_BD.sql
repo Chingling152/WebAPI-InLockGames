@@ -1,8 +1,8 @@
 -- Insere um usuario Administrador
-Insert Into Usuarios(Email,Senha,TipoUsuario) Values('admin@admin.com','admin','ADMINISTRADOR');
+Insert Into Usuarios(Email,Senha,TipoUsuario) Values('admin@admin.com','admin',1);
 
 -- Insere um exemplo de Cliente 
-Insert Into Usuarios(Email,Senha,TipoUsuario) Values('cliente@cliente.com','cliente','CLIENTE');
+Insert Into Usuarios(Email,Senha,TipoUsuario) Values('cliente@cliente.com','cliente',2);
 
 -- Insere Os 3 estudios : Rockstar , Blizzard e Square Enix
 Insert Into Estudios(NomeEstudio) Values ('Rockstar Studios'),('Blizzard'),('Square Enix');
